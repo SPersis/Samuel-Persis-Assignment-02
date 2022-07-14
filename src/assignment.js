@@ -31,13 +31,10 @@ assignment.sumOfNumbers = sumOfNumbers;
 //  * @returns number the count of even numbers
 //  */
 function countEvenNumbers(arrayOfNumbers) {
-
-    let countEvenNumbers = arrayOfNumbers.filter(even => {
+    let countEvenNumbers =             arrayOfNumbers.filter(even => {
         return even % 2 === 0;
     })
-
-    return countEvenNumbers.length;
-        
+    return countEvenNumbers.length;   
     }
 assignment.countEvenNumbers = countEvenNumbers;
 
