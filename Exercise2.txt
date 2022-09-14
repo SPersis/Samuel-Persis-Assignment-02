@@ -1,0 +1,12 @@
+  Linux command		Function
+
+  uname-a			show system and kernel
+  moun			show mounted filesystems
+  date			show system date
+  uptime			show uptime
+  man command		show manual for command
+  mkdir			make a new directory 
+  cd			enter a directory
+  ls			List files
+  grep			Search for pattern in files
+  echo $name			Output value of a variable name

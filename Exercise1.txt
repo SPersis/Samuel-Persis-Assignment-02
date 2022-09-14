@@ -1,0 +1,74 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: "echo The machine is read!"
+
+  config.vm.define "master" do |master|
+    master.vm.box = "ubuntu/focal64"
+  end
+
+  config.vm.define "slave" do |slave|
+    slave.vm.box = "ubuntu/focal64"
+  end
+  # config.vm.provision "shell", inline: <<-SHELL
+
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  config.vm.network "private_network", type: "dhcp"
+  # config.vm.network "public_network"
+
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+
+
+  # SHELL
+end
+
+
+		#	RUNNIMG IFCONFIG COMMAND        #
+
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::ef:f7ff:fecd:d498  prefixlen 64  scopeid 0x20<link>
+        ether 02:ef:f7:cd:d4:98  txqueuelen 1000  (Ethernet)
+        RX packets 2580  bytes 215134 (215.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1700  bytes 190831 (190.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.5  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::a00:27ff:fe2b:a6e7  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:2b:a6:e7  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 4960 (4.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 31  bytes 4466 (4.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
